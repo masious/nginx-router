@@ -1,0 +1,5 @@
+
+docker rm -f test-nginx
+
+docker run --name test-nginx -d -p 80:80 -v $(pwd)/confs/:/etc/nginx/conf.d/ --net connect-net nginx
+

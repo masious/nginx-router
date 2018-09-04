@@ -1,0 +1,13 @@
+cp template.conf confs/$1.conf
+
+if [ "$1" = "" ] || [ "$2" = "" ]; then
+    echo 'First argument should be service name and the second one the port.'
+    echo 'Example: "./new-router mySuperCoolService 8000"'
+    exit 1
+fi
+
+echo 'Using '$1' as service name and '$2' as the port.'
+
+sed -i -e 's/<name>/'$1'/g' confs/$1.conf
+sed -i -e 's/<port>/'$2'/g' confs/$1.conf
+
