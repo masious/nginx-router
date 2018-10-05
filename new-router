@@ -10,4 +10,3 @@ echo 'Using '$1' as service name and '$2' as the port.'
 
 sed -i -e 's/<name>/'$1'/g' confs/$1.conf
 sed -i -e 's/<port>/'$2'/g' confs/$1.conf
-
